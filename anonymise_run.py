@@ -51,7 +51,7 @@ if __name__ == '__main__':
     # make sure this is even
     random_select = random.sample(people_nodes, number_to_change)
     if len(random_select) % 2 == 1:
-        random_select.append(random.sample(people_nodes, 1))
+        random_select.append(random.sample(people_nodes, 1)[0])
 
     # random_select = ["psotirop@redhat.com", "stefano.maestri@javalinux.it"]
 

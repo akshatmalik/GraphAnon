@@ -32,8 +32,8 @@ if __name__ == '__main__':
     repository_path = "wildfly/"
     github_url = "wildfly/wildfly"
 
-    from_date = datetime.datetime(2015, 1, 1, 17, 0, 0)
-    to_date = datetime.datetime(2015, 12, 30, 17, 59, 0)
+    from_date = datetime.datetime(2011, 1, 1, 17, 0, 0)
+    to_date = datetime.datetime(2011, 12, 30, 17, 59, 0)
 
     git_repo = Git(repository_path)
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
         # start_pull_number = 8531
         # start_pull_number = 8391
-        start_pull_number = 7507
+        start_pull_number = 2
 
 
 
@@ -119,7 +119,7 @@ if __name__ == '__main__':
                 pull = repo.get_pull(start_pull_number)
             except Exception as e:
                 print("NOT FOUND")
-                start_pull_number += -1
+                start_pull_number += 1
                 continue
 
             # todo: add condition for pull request fetch

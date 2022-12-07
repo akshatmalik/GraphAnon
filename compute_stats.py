@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
     df = pd.DataFrame()
 
-    df = pd.read_csv("data/interm_data-2022-12-05 10:44:21.097306.csv")
+    # df = pd.read_csv("data/interm_data-2022-12-05 10:44:21.097306.csv")
 
-    start = 3000 - 300
+    start = 0
     jump = 300
 
     limit = 1000000

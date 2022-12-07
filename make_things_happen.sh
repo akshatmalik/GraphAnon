@@ -9,6 +9,7 @@
 
 anonymity_level=0
 for i in {1..5}
+#for i in {1..1}
 do
 
   echo "Run $i"
@@ -21,8 +22,9 @@ do
   python train_global_model.py wildfly RF
 
   cd ../
-  #python anonymise_run.py
+  python anonymise_run.py
 
+  python compute_stats.py
 
 
   anonymity_level=$(($anonymity_level+20))
