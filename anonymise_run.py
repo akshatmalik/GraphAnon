@@ -75,8 +75,8 @@ if __name__ == '__main__':
             d_second_info = node_maker.find_node_with_relation(ANONYMOUS_NODE[0], second_node_id, link_type)
 
             # delte links both nodes have
-            node_maker.delete_link(ANONYMOUS_NODE[0], first_node_id, link_type)
-            node_maker.delete_link(ANONYMOUS_NODE[0], second_node_id, link_type)
+            node_maker.delete_links_of_type(ANONYMOUS_NODE[0], first_node_id, link_type)
+            node_maker.delete_links_of_type(ANONYMOUS_NODE[0], second_node_id, link_type)
 
             # assign first, second links
             for d_links in d_first_info:

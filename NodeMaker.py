@@ -107,5 +107,8 @@ class NodeMaker:
         res = self.__conn.query(f""" match (n:{node_type}) return count(n) as e """)
         return int(res[0].data()["e"])
 
-    def delete_link(self, node_type, node_type_id, relation_type):
+    def delete_links_of_type(self, node_type, node_type_id, relation_type):
         self.__conn.query(f""" match (p:{node_type} {{ id : '{node_type_id}' }} ) -[r:{relation_type}]-(b) delete r """)
+
+    def delete_link_of_id(self, node_type, node_type_id, relation_type, related_id):
+        self.__conn.query(f""" match (p:{node_type} {{ id : '{node_type_id}' }} ) -[r:{relation_type}]-(b {{ id : '{related_id}' }} ) delete r """)
