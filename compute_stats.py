@@ -15,6 +15,7 @@ from dateutil import parser
 from time import sleep
 from dateutil import parser
 import json
+import sys
 
 from dateutil import  parser
 if __name__ == '__main__':
@@ -23,6 +24,8 @@ if __name__ == '__main__':
                            pwd="password",
                            db="wildfly2015")
     node_maker = NodeMaker(conn)
+
+    file_prefix = str(sys.argv[1])
 
     df = pd.DataFrame()
 
@@ -285,4 +288,4 @@ if __name__ == '__main__':
 
     print(f"fix_count - {df['fixcount'].sum()}  bug_count - {df['bugcount'].sum()}")
     df["author_date"] = df["author_date"].apply(lambda x: int(parser.parse(x).timestamp()))
-    df.to_csv(f"bug_annonted-{datetime.datetime.now()}.csv")
+    df.to_csv(f"{file_prefix}_bug_annonted-{datetime.datetime.now()}.csv")

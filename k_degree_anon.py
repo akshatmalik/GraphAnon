@@ -119,7 +119,7 @@ if __name__ == '__main__':
                         for _ in range(remove_nodes):
                             removal_link_entity = random_element["y"][0]
                             print(f"remove id - {removal_link_entity['id']}")
-                            node_maker.delete_link_of_id(main_node, anony_node, link_type, removal_link_entity['id'])
+                            # node_maker.delete_link_of_id(main_node, anony_node, link_type, removal_link_entity['id'])
 
 
                     elif r_deduct_node < key:
@@ -129,7 +129,7 @@ if __name__ == '__main__':
                         skipping_anony = random.randrange(0+add_nodes, total_node-add_nodes)
                         anony_nodes_set = node_maker.find_nodes(anony_node, skipping_anony, add_nodes)
                         for n in anony_nodes_set:
-                            node_maker.link_nodes(main_node, random_element['x'], link_type, anony_node, n['id'])
+                            # node_maker.link_nodes(main_node, random_element['x'], link_type, anony_node, n['id'])
                             print(f"addding n {n}")
 
                         val = degree_log.get(key, [])
@@ -141,7 +141,7 @@ if __name__ == '__main__':
             print(f"degree {key} num {len(degree_log[key])}")
 
         m_e_time = time.time()
-        print(f"entity time - {m_e_time - m_time}")
+        print(f"entity {main_node} type - {anony_node} time - {m_e_time - m_time}")
 
 
     # this is outer loop level
